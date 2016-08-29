@@ -37,3 +37,27 @@ $on-laptop:        800px;
 
 // Import partials from the `minima` theme.
 @import "minima";
+
+.site-header {
+  border-top: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-nav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link {
+  text-transform: uppercase;
+}
+
+.site-logo {
+  width: 53.16px;
+  height: 62.16px;
+}
