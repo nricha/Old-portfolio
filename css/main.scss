@@ -28,12 +28,27 @@ $on-laptop: 800px;
 //     }
 // }
 // Import partials from the `minima` theme.
+
+$header-height: 95px;
 @import "minima";
+.page-content {
+  padding: 30px 0;
+  background-image: url(/img/homepage-bg.jpg);
+  height: 1250px;
+  background-repeat: no-repeat;
+  background-position-y: -135px;
+  margin-top: $header-height;
+}
+
 .site-header {
   border-top: none;
-  height: 95px;
+  height: $header-height;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
 }
 
 .wrapper {
@@ -65,17 +80,22 @@ $on-laptop: 800px;
   height: 62.16px;
 }
 
-.page-content {
-  padding: 30px 0;
-  background-image: url(/img/homepage-bg.jpg);
-  height: 1250px;
-  background-repeat: no-repeat;
-  background-position-y: -135px;
+.home {
+  position: relative;
+  top: 220px;
+  left: -240px;
+  .para1 {
+    margin-bottom: 20px;
+  }
+  .para2 {
+    margin-bottom: 32px;
+  }
 }
 
 .main-para {
   font-size: 28px;
 }
+
 
 .view-projects-button {
   display: flex;
