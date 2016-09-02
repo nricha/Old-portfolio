@@ -1,11 +1,17 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     <nav class="site-nav">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/about">About</a>
-      <object class="site-logo" data="/img/logo.svg" alt="Site main logo; shows initials RN"></object>
-      <a class="nav-link" href="/portfolio">Portfolio</a>
-      <a class="nav-link" href="/resume">Resume</a>
+      {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+        {% for p in navigation_pages %}
+          {% if p.navigation_weight %}
+          <a href="{{ p.url }}" class="nav-link {% if p.url == page.url %}active {% endif %}">
+            {{ p.title }}
+          </a>
+          {% endif %} 
+          {% if p.navigation_weight == 2 %}
+            <object class="site-logo" data="/img/logo.svg" alt="Site main logo; shows initials RN"></object>
+          {% endif %}
+        {% endfor %}
     </nav>
   </div>
 </header>

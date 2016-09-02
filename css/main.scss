@@ -1,9 +1,9 @@
 --- 
 # Only the main Sass file needs front matter (the dashes are enough)
----
+--- 
 @charset "utf-8";
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+$base-font-family: "Roboto", sans-serif;
 $base-font-size: 16px;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.875;
@@ -29,7 +29,19 @@ $on-laptop: 800px;
 // }
 // Import partials from the `minima` theme.
 
-$header-height: 95px;
+
+$header-height: 105px;
+
+@mixin roboto($weight: 'regular') {
+  $weights_to_fonts: (
+    'light': 300,
+    'regular': 400,
+    'medium': 500,
+    'bold': 700
+  );
+  font-weight: map-get($weights_to_fonts, $weight);
+}
+
 @import "minima";
 .page-content {
   padding: 30px 0;
@@ -38,6 +50,8 @@ $header-height: 95px;
   background-repeat: no-repeat;
   background-position-y: -135px;
   margin-top: $header-height;
+  @include roboto('light');
+  letter-spacing: 0.75px;
 }
 
 .site-header {
@@ -64,7 +78,6 @@ $header-height: 95px;
   flex-direction: row;
   align-items: center;
   flex-grow: 1;
-
   a {
     margin: 0 25px;
     color: rgba(0, 0, 0, 0.35);
@@ -73,6 +86,29 @@ $header-height: 95px;
 
 .nav-link {
   text-transform: uppercase;
+  &.active {
+    &::after {
+      content: '';
+      border-bottom: 2px solid black;
+      width: 40%;
+      display: block;
+      position: relative;
+      top: -10px;
+    }
+    color: black;
+  }
+  &::after {
+    content: '';
+    border-bottom: 2px solid transparent;
+    width: 40%;
+    display: block;
+    position: relative;
+    top: -10px;
+    margin: auto;
+  }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .site-logo {
@@ -96,7 +132,6 @@ $header-height: 95px;
   font-size: 28px;
 }
 
-
 .view-projects-button {
   display: flex;
   text-align: center;
@@ -109,7 +144,6 @@ $header-height: 95px;
   letter-spacing: 0.75px;
   justify-content: center;
   align-items: center;
-
   &:visited {
     color: #432d3a;
   }
