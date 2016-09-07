@@ -7,7 +7,7 @@ $base-font-family: "Open Sans", sans-serif;
 $base-font-size: 16px;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 1.3;
 $spacing-unit: 30px;
 $text-color: #111;
 $background-color: #fdfdfd;
@@ -19,6 +19,7 @@ $grey-color-dark: darken($grey-color, 25%);
 $content-width: 800px;
 $on-palm: 600px;
 $on-laptop: 800px;
+$theme-green: #429a24;
 // Minima also includes a mixin for defining media queries.
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -45,6 +46,10 @@ $header-height: 105px;
 
 body {
   @include opensans('regular');
+}
+
+.semi-bold {
+  @include opensans('semi-bold');
 }
 
 .page-content {
@@ -93,12 +98,15 @@ body {
 
 .nav-link {
   text-transform: uppercase;
+  @include opensans('semi-bold');
+  
   &.active {
-    border-bottom: 2px solid #429a24;
+    border-bottom: 2px solid $theme-green;
     color: rgba(#000, 0.7);
   }
   border-bottom: 2px solid transparent;
   &:hover {
+    color: rgba(#000, 0.7);
     text-decoration: none;
   }
 }
@@ -113,7 +121,7 @@ body {
   top: 220px;
   left: -240px;
   .para1 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .para2 {
     margin-bottom: 32px;
@@ -121,25 +129,35 @@ body {
 }
 
 .main-para {
-  font-size: 28px;
+  font-size: 29px;
 }
 
 .view-projects-button {
-  display: flex;
+  @include opensans('semi-bold');
+  font-size: 13px;
   text-align: center;
-  height: 35px;
-  width: 150px;
-  border: 1pt solid white;
-  color: #423d3a;
+  height: 44px;
+  width: 182px;
+	color: #fff;
   text-transform: uppercase;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-  letter-spacing: 0.75px;
-  justify-content: center;
+  background-color: $theme-green;
+  letter-spacing: 1.5px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 2px -0.5px rgba(0, 0, 0, 0.37);
   &:visited {
-    color: #432d3a;
+    color: #fff;
   }
   &:hover {
     text-decoration: none;
   }
+  // &::after {
+  //   content: '';
+  //   border-bottom: 2px solid rgba(0, 0, 0, 0.37);
+  //   position: relative;
+  //   top: -1px;
+  //   width: 100%;
+  //   display: inline-block;
+  // }
 }
