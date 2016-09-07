@@ -3,7 +3,7 @@
 --- 
 @charset "utf-8";
 // Our variables
-$base-font-family: "Roboto", sans-serif;
+$base-font-family: "Open Sans", sans-serif;
 $base-font-size: 16px;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.875;
@@ -32,17 +32,21 @@ $on-laptop: 800px;
 
 $header-height: 105px;
 
-@mixin roboto($weight: 'regular') {
+@mixin opensans($weight: 'regular') {
   $weights_to_fonts: (
     'light': 300,
     'regular': 400,
-    'medium': 500,
-    'bold': 700
+    'semi-bold': 600
   );
   font-weight: map-get($weights_to_fonts, $weight);
 }
 
 @import "minima";
+
+body {
+  @include opensans('regular');
+}
+
 .page-content {
   padding: 30px 0;
   background-image: url(/img/homepage-bg.jpg);
@@ -50,7 +54,7 @@ $header-height: 105px;
   background-repeat: no-repeat;
   background-position-y: -135px;
   margin-top: $header-height;
-  @include roboto('light');
+  @include opensans('light');
   letter-spacing: 0.75px;
 }
 
@@ -78,34 +82,22 @@ $header-height: 105px;
   flex-direction: row;
   align-items: center;
   flex-grow: 1;
+  line-height: 44px;
   a {
     margin: 0 25px;
-    color: rgba(0, 0, 0, 0.35);
+    color: rgba(0, 0, 0, 0.30);
+    font-size: 13px;
+    letter-spacing: 2px;
   }
 }
 
 .nav-link {
   text-transform: uppercase;
   &.active {
-    &::after {
-      content: '';
-      border-bottom: 2px solid black;
-      width: 40%;
-      display: block;
-      position: relative;
-      top: -10px;
-    }
-    color: black;
+    border-bottom: 2px solid #429a24;
+    color: rgba(#000, 0.7);
   }
-  &::after {
-    content: '';
-    border-bottom: 2px solid transparent;
-    width: 40%;
-    display: block;
-    position: relative;
-    top: -10px;
-    margin: auto;
-  }
+  border-bottom: 2px solid transparent;
   &:hover {
     text-decoration: none;
   }
