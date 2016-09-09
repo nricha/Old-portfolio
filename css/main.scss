@@ -59,7 +59,7 @@ body {
 .home-wrapper {
   padding: 30px 0;
   background-image: url(/img/homepage-bg.jpg);
-  height: 1250px;
+  height: 900px;
   background-repeat: no-repeat;
   background-position-y: -135px;
   margin-top: $header-height;
@@ -68,7 +68,7 @@ body {
 }
 
 .site-header {
-  border-top: none;
+  border: none;
   height: $header-height;
   display: flex;
   align-items: center;
@@ -124,6 +124,7 @@ body {
   position: relative;
   top: 220px;
   left: 400px;
+  display: inline-block;
   .para1 {
     margin-bottom: 30px;
   }
@@ -156,12 +157,13 @@ body {
   &:hover {
     text-decoration: none;
   }
-  // &::after {
-  //   content: '';
-  //   border-bottom: 2px solid rgba(0, 0, 0, 0.37);
-  //   position: relative;
-  //   top: -1px;
-  //   width: 100%;
-  //   display: inline-block;
-  // }
+}
+
+.portfolio-wrapper {
+  display: flex;
+}
+
+.portfolio-item-wrapper {
+  background:white;
+
 }
