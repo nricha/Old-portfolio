@@ -167,5 +167,7 @@ body {
 
 .portfolio-item-wrapper {
   background: white;
-  width: 33%;
+  min-width: 30%;
+  margin: 10px auto;
+  text-align: center;
 }
