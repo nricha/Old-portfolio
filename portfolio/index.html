@@ -6,62 +6,158 @@ title: Portfolio
 <div class="portfolio-wrapper">
   <a class="portfolio-item-wrapper" href="./plastic-ocean/">
     <div class="portfolio-item-background">
-      <div><img src="./plastic-ocean/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./plastic-ocean/img/thumbnail.jpg"" src="blank.gif"" /></div>
       <div class="popup-title">Plastic Ocean</div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./skateboard/">
     <div class="portfolio-item-background">
-      <div><img  src="./skateboard/img/skateboard-thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./skateboard/img/skateboard-thumbnail.jpg" src="blank.gif" /></div>
       <div class="popup-title">Skateboard</div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./sufi-cafe/">
     <div class="portfolio-item-background">
-      <div><img src="./sufi-cafe/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./sufi-cafe/img/thumbnail.jpg" src="blank.gif"" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./horoscope/">
     <div class="portfolio-item-background">
-      <div><img src="./horoscope/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./horoscope/img/thumbnail.jpg"" src="blank.gif" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./brand-style-guide/">
     <div class="portfolio-item-background">
-      <div><img src="./brand-style-guide/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./brand-style-guide/img/thumbnail.jpg" src="blank.gif" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./porsche/">
     <div class="portfolio-item-background">
-      <div><img src="./porsche/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./porsche/img/thumbnail.jpg" src="blank.gif" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./try-on-app/">
     <div class="portfolio-item-background">
-      <div><img src="./try-on-app/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./try-on-app/img/thumbnail.jpg" src="blank.gif" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./picasso/">
     <div class="portfolio-item-background">
-      <div><img src="./picasso/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./picasso/img/thumbnail.jpg" src="blank.gif" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./old-siam/">
     <div class="portfolio-item-background">
-      <div><img src="./old-siam/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./old-siam/img/thumbnail.jpg" src="blank.gif"" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
   <a class="portfolio-item-wrapper" href="./knots-and-weaves/">
     <div class="portfolio-item-background">
-      <div><img src="./knots-and-weaves/img/thumbnail.jpg" /></div>
+      <div><img class="lazy" data-src="./knots-and-weaves/img/thumbnail.jpg" src="blank.gif" /></div>
+      <div class="popup-title"></div>
+    </div>
+  </a>
+  <a class="portfolio-item-wrapper" href="./rihanna/">
+    <div class="portfolio-item-background">
+      <div><img class="lazy" data-src="./rihanna/img/thumbnail.jpg" src="blank.gif" /></div>
+      <div class="popup-title"></div>
+    </div>
+  </a>
+  <a class="portfolio-item-wrapper" href="./atl-film-fest/">
+    <div class="portfolio-item-background">
+      <div><img class="lazy" data-src="./atl-film-fest/img/thumbnail.jpg" src="blank.gif" /></div>
       <div class="popup-title"></div>
     </div>
   </a>
 </div>
+
+<script>
+/* lazyload.js (c) Lorenzo Giuliani
+ * MIT License (http://www.opensource.org/licenses/mit-license.html)
+ *
+ * expects a list of:  
+ * `<img src="blank.gif" data-src="my_image.png" width="600" height="400" class="lazy">`
+ */
+
+!function(window){
+  var $q = function(q, res){
+        if (document.querySelectorAll) {
+          res = document.querySelectorAll(q);
+        } else {
+          var d=document
+            , a=d.styleSheets[0] || d.createStyleSheet();
+          a.addRule(q,'f:b');
+          for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
+            l[b].currentStyle.f && c.push(l[b]);
+
+          a.removeRule(0);
+          res = c;
+        }
+        return res;
+      }
+    , addEventListener = function(evt, fn){
+        window.addEventListener
+          ? this.addEventListener(evt, fn, false)
+          : (window.attachEvent)
+            ? this.attachEvent('on' + evt, fn)
+            : this['on' + evt] = fn;
+      }
+    , _has = function(obj, key) {
+        return Object.prototype.hasOwnProperty.call(obj, key);
+      }
+    ;
+
+  function loadImage (el, fn) {
+    var img = new Image()
+      , src = el.getAttribute('data-src');
+    img.onload = function() {
+      if (!! el.parent)
+        el.parent.replaceChild(img, el)
+      else
+        el.src = src;
+
+      fn? fn() : null;
+    }
+    img.src = src;
+  }
+
+  function elementInViewport(el) {
+    var rect = el.getBoundingClientRect()
+
+    return (
+       rect.top    >= 0
+    && rect.left   >= 0
+    && rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+    )
+  }
+
+    var images = new Array()
+      , query = $q('img.lazy')
+      , processScroll = function(){
+          for (var i = 0; i < images.length; i++) {
+            if (elementInViewport(images[i])) {
+              loadImage(images[i], function () {
+                images.splice(i, i);
+              });
+            }
+          };
+        }
+      ;
+    // Array.prototype.slice.call is not callable under our lovely IE8 
+    for (var i = 0; i < query.length; i++) {
+      images.push(query[i]);
+    };
+
+    processScroll();
+    addEventListener('scroll',processScroll);
+
+}(this);
+
+</script>
