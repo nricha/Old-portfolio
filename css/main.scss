@@ -205,14 +205,19 @@ body {
   }
   &:hover {
     .popup-title {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.55);
       z-index: 100;
+      .popup-title-text {
+        color: white;
+      }
     }
   }
 }
