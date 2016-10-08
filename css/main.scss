@@ -168,6 +168,14 @@ body {
 
 .portfolio-item-background {
   background: white;
+  max-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 260px;
+  }
 }
 
 .portfolio-item-title {
