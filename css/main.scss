@@ -162,13 +162,41 @@ body {
 .portfolio-wrapper {
   display: flex;
   flex-wrap: wrap;
-  background-color: $background-color;
-  margin-top: 160px;
+  margin-top: 140px;
+  padding: 0 5%;
+}
+
+.portfolio-item-background {
+  background: white;
+}
+
+.portfolio-item-title {
+  text-decoration: none;
+  color: #8c8c8c;
+  :hover {
+    @include opensans('semi-bold');
+    text-decoration: none;
+  }
 }
 
 .portfolio-item-wrapper {
-  background: white;
-  min-width: 30%;
+  min-width: 32%;
   margin: 10px auto;
   text-align: center;
+
+   &:hover .portfolio-item-title {
+    @include opensans('semi-bold');
+    text-decoration: none;
+  }
+}
+
+.portfolio-item-wrapper {
+  .popup-title {
+    display: none;
+  }
+  &:hover {
+    .popup-title {
+      display: block;
+    }
+  }
 }
