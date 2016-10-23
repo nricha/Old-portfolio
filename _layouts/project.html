@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+      <div class="page-wrapper">
+        <div class="project-container">
+          <div class="left-side">
+            {{content}}
+          </div>
+          <div class="right-side">
+            <div class="project-images">
+              <img id="image-switcher-fullimage" style="width: 50%; height: 50%;" src="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {% include footer.html %}
+    <script src="{{ "/js/image-switcher.js" | prepend: site.baseurl }}"></script>
+  </body>
+
+</html>

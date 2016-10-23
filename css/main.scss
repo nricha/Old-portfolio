@@ -232,6 +232,7 @@ body {
     width: 22%;
     background-color: #fff;
     padding: 50px;
+
     .project-title {
       @include opensans('semi-bold');
       font-size: 15px;
@@ -242,6 +243,7 @@ body {
       color: $grey-color;
       font-size: 14px;     
     }
+
   }
   .right-side {
     background-color: #fff;
@@ -253,4 +255,8 @@ body {
       justify-content: center;
     }
   }
+}
+
+[image-switcher] img {
+  width: 150px;
 }
