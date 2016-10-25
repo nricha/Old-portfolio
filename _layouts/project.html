@@ -11,19 +11,16 @@
       <div class="page-wrapper">
         <div class="project-container">
           <div class="left-side">
-            {{content}}
+            {{page.left_side}}
           </div>
           <div class="right-side">
-            <div class="project-images">
-              <img id="image-switcher-fullimage" style="width: 50%; height: 50%;" src="" />
-            </div>
+            {{page.right_side}}
           </div>
         </div>
       </div>
     </main>
 
     {% include footer.html %}
-    <script src="{{ "/js/image-switcher.js" | prepend: site.baseurl }}"></script>
   </body>
 
 </html>
