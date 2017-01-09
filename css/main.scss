@@ -20,6 +20,7 @@ $content-width: 800px;
 $on-palm: 600px;
 $on-laptop: 800px;
 $theme-green: #429a24;
+$grey-color-text: rgba(0, 0, 0, 0.3);
 // Minima also includes a mixin for defining media queries.
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -49,7 +50,7 @@ body {
 }
 
 p, div {
-  color: $grey-color;
+  color: $grey-color-text;
   font-size: 14px;
 }
 
@@ -101,7 +102,7 @@ p, div {
   line-height: 44px;
   a {
     margin: 0 25px;
-    color: rgba(0, 0, 0, 0.30);
+    color: $grey-color-text;
     font-size: 13px;
     letter-spacing: 2px;
   }
@@ -330,7 +331,11 @@ p, div {
     flex: 0 0 45%;
     display: flex;
     .about-right-text {
-      flex: 0 0 70%;
+      flex: 0 0 50%;
+      line-height: 1.75;
+      letter-spacing: 0.75px;
+      word-spacing: 0.75px;
+
       h3 {
         color: black;
       }
