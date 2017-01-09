@@ -335,9 +335,12 @@ p, div {
       line-height: 1.75;
       letter-spacing: 0.75px;
       word-spacing: 1.5px;
-
-      h3 {
+      .about-text-heading {
+        margin-top: 25px;
         color: black;
+      }
+      .about-social-links {
+        margin-bottom: 5px;
       }
     }
   }
