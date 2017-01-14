@@ -302,11 +302,6 @@ p, div {
     padding: 50px 0;
     margin-left: 6px;
     .project-images {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
       div {
         margin-top: 15px;
       }
@@ -314,7 +309,20 @@ p, div {
       img {
         max-width: 500px;
       }
+
+      .project-image-title {
+        margin-left: 95px;
+        margin-bottom: 20px;
+      }
+
+      .project-image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
+
   }
 }
 
