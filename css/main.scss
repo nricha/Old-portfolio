@@ -49,6 +49,10 @@ body {
   @include opensans('regular');
 }
 
+a, a:visited {
+  color: $brand-color;
+}
+
 p, div {
   color: $grey-color-text;
   font-size: 14px;
