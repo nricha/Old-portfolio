@@ -117,6 +117,13 @@ p, div {
   text-transform: uppercase;
   @include opensans('semi-bold');
   
+  // The two nav links are actually equidistant but the
+  // About link on the left appears to be closer. Fix
+  &:first-child {
+    position: relative;
+    left: -5px;
+  }
+  
   &.active {
     border-bottom: 2px solid $theme-green;
     color: rgba(#000, 0.7);
@@ -127,11 +134,6 @@ p, div {
     text-decoration: none;
   }
 }
-
-// .site-logo {
-//   width: 62px;
-//   height: 62px;
-// }
 
 .site-logo {
   background-image: url('/img/logo.svg');
