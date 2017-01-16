@@ -3,13 +3,13 @@
     <nav class="site-nav">
       {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
         {% for p in navigation_pages %}
-          {% if p.navigation_weight %}
+          {% if p.navigation_weight == 1 or p.navigation_weight == 3 %}
           <a href="{{ p.url }}" class="nav-link {% if p.url == page.url %}active {% endif %}">
-            {{ p.title }}
+            <span>{{ p.title }}</span>
           </a>
           {% endif %} 
           {% if p.navigation_weight == 2 %}
-            <object class="site-logo" data="/img/logo.svg" alt="Site main logo; shows initials RN"></object>
+            <a href="{{ p.url }}" class="site-logo"></object></a>
           {% endif %}
         {% endfor %}
     </nav>

@@ -21,6 +21,7 @@ $on-palm: 600px;
 $on-laptop: 800px;
 $theme-green: #429a24;
 $grey-color-text: rgba(0, 0, 0, 0.3);
+$site-logo-size: 62px;
 // Minima also includes a mixin for defining media queries.
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -93,7 +94,6 @@ p, div {
 .wrapper {
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
   justify-content: center;
 }
 
@@ -113,6 +113,7 @@ p, div {
 }
 
 .nav-link {
+  display: flex;
   text-transform: uppercase;
   @include opensans('semi-bold');
   
@@ -127,9 +128,16 @@ p, div {
   }
 }
 
+// .site-logo {
+//   width: 62px;
+//   height: 62px;
+// }
+
 .site-logo {
-  width: 53.16px;
-  height: 62.16px;
+  background-image: url('/img/logo.svg');
+  background-size: $site-logo-size;
+  width: $site-logo-size;
+  height: $site-logo-size;
 }
 
 .home {
